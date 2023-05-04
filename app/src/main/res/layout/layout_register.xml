@@ -46,13 +46,15 @@
         android:textSize="@dimen/newsMoreTextSize" />
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/idEdtuserLogin"
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
             <EditText
                 style="@style/modifiedEditText"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:hint="Login"/>
+                android:hint="Login"
+                />
         </android.support.design.widget.TextInputLayout>
 
         <TextView
@@ -63,6 +65,7 @@
             android:textSize="@dimen/newsMoreTextSize" />
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/idEdtuserPassword"
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
             <EditText
@@ -80,6 +83,7 @@
             android:textSize="@dimen/newsMoreTextSize" />
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/idEdtuserName"
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
             <EditText
@@ -97,6 +101,7 @@
             android:textSize="@dimen/newsMoreTextSize" />
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/idEdtuserSurname"
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
             <EditText
@@ -114,6 +119,7 @@
             android:textSize="@dimen/newsMoreTextSize" />
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/idEdtuserMiddleName"
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
             <EditText
@@ -131,6 +137,7 @@
             android:textSize="@dimen/newsMoreTextSize" />
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/idEdtuserDateOfBirth"
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
             <EditText
@@ -143,11 +150,30 @@
         <TextView
             style="@style/viewParent"
             android:layout_marginTop="10dp"
+            android:text="Email"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="@dimen/newsMoreTextSize" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/idEdtuserEmail"
+            style="@style/parent"
+            android:layout_marginTop="@dimen/signup_text_margin_top">
+            <EditText
+                style="@style/modifiedEditText"
+                android:inputType="text"
+                android:maxLines="1"
+                android:hint="Email"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            style="@style/viewParent"
+            android:layout_marginTop="10dp"
             android:text="Mobile Number"
             android:textColor="@color/primaryTextColor"
             android:textSize="@dimen/newsMoreTextSize" />
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/idEdtuserNumber"
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
             <EditText
@@ -165,6 +191,7 @@
             android:textSize="@dimen/newsMoreTextSize" />
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/idEdtuserQuestion"
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
             <EditText
@@ -182,6 +209,7 @@
             android:textSize="@dimen/newsMoreTextSize" />
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/idEdtuserAnswer"
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
             <EditText
@@ -191,8 +219,9 @@
                 android:hint="Answer for question"/>
         </android.support.design.widget.TextInputLayout>
 
+
         <Button
-            android:id="@+id/button"
+            android:id="@+id/idBtnRegister"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="40dp"
