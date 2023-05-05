@@ -11,8 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputLayout;
+
 public class Register extends Activity {
-    EditText Login, Password, Name, Surname, MiddleName, DateOfBirth, Email, MobileNumber, Question, Answer ;
+    TextInputLayout Login, Password, Name, Surname, MiddleName, DateOfBirth, Email, MobileNumber, Question, Answer ;
     Button Register;
     String LoginHolder, PasswordHolder, NameHolder, SurnameHolder, MiddleNameHolder, DateOfBirthHolder, EmailHolder, MobileNumberHolder,  QuestionHolder, AnswerHolder;
     Boolean EditTextEmptyHolder;
@@ -25,16 +28,16 @@ public class Register extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_register);
-        Login = (EditText)findViewById(R.id.idEdtuserLogin);
-        Password = (EditText)findViewById(R.id.idEdtuserPassword);
-        Name = (EditText)findViewById(R.id.idEdtuserName);
-        Surname = (EditText)findViewById(R.id.idEdtuserSurname);
-        MiddleName = (EditText)findViewById(R.id.idEdtuserMiddleName);
-        DateOfBirth = (EditText)findViewById(R.id.idEdtuserDateOfBirth);
-        Email = (EditText)findViewById(R.id.idEdtuserEmail);
-        MobileNumber = (EditText)findViewById(R.id.idEdtuserNumber);
-        Question = (EditText)findViewById(R.id.idEdtuserQuestion);
-        Answer = (EditText)findViewById(R.id.idEdtuserAnswer);
+        Login = findViewById(R.id.idEdtuserLogin);
+        Password = findViewById(R.id.idEdtuserPassword);
+        Name = findViewById(R.id.idEdtuserName);
+        Surname = findViewById(R.id.idEdtuserSurname);
+        MiddleName = findViewById(R.id.idEdtuserMiddleName);
+        DateOfBirth = findViewById(R.id.idEdtuserDateOfBirth);
+        Email = findViewById(R.id.idEdtuserEmail);
+        MobileNumber = findViewById(R.id.idEdtuserNumber);
+        Question = findViewById(R.id.idEdtuserQuestion);
+        Answer = findViewById(R.id.idEdtuserAnswer);
         Register = (Button)findViewById(R.id.idBtnRegister);
         sqLiteHelper = new DBHandler(this);
         // Adding click listener to register button.
@@ -85,30 +88,30 @@ public class Register extends Activity {
     }
     // Empty edittext after done inserting process method.
     public void EmptyEditTextAfterDataInsert(){
-        Login.getText().clear();
-        Password.getText().clear();
-        Name.getText().clear();
-        Surname.getText().clear();
-        MiddleName.getText().clear();
-        DateOfBirth.getText().clear();
-        Email.getText().clear();
-        MobileNumber.getText().clear();
-        Question.getText().clear();
-        Answer.getText().clear();
+        Login.getEditText().getText().clear();
+        Password.getEditText().getText().clear();
+        Name.getEditText().getText().clear();
+        Surname.getEditText().getText().clear();
+        MiddleName.getEditText().getText().clear();
+        DateOfBirth.getEditText().getText().clear();
+        Email.getEditText().getText().clear();
+        MobileNumber.getEditText().getText().clear();
+        Question.getEditText().getText().clear();
+        Answer.getEditText().getText().clear();
     }
     // Method to check EditText is empty or Not.
     public void CheckEditTextStatus(){
         // Getting value from All EditText and storing into String Variables.
-        LoginHolder = Login.getText().toString() ;
-        PasswordHolder = Password.getText().toString();
-        NameHolder = Password.getText().toString();
-        SurnameHolder = Password.getText().toString();
-        MiddleNameHolder = Password.getText().toString();
-        DateOfBirthHolder = Password.getText().toString();
-        EmailHolder = Password.getText().toString();
-        MobileNumberHolder = Password.getText().toString();
-        QuestionHolder = Password.getText().toString();
-        AnswerHolder = Password.getText().toString();
+        LoginHolder = Login.getEditText().getText().toString() ;
+        PasswordHolder = Password.getEditText().getText().toString();
+        NameHolder = Password.getEditText().getText().toString();
+        SurnameHolder = Password.getEditText().getText().toString();
+        MiddleNameHolder = Password.getEditText().getText().toString();
+        DateOfBirthHolder = Password.getEditText().getText().toString();
+        EmailHolder = Password.getEditText().getText().toString();
+        MobileNumberHolder = Password.getEditText().getText().toString();
+        QuestionHolder = Password.getEditText().getText().toString();
+        AnswerHolder = Password.getEditText().getText().toString();
         if(TextUtils.isEmpty(NameHolder) || TextUtils.isEmpty(PasswordHolder) || TextUtils.isEmpty(NameHolder)|| TextUtils.isEmpty(SurnameHolder)|| TextUtils.isEmpty(MiddleNameHolder)|| TextUtils.isEmpty(DateOfBirthHolder)|| TextUtils.isEmpty(EmailHolder)|| TextUtils.isEmpty(MobileNumberHolder)|| TextUtils.isEmpty(QuestionHolder)|| TextUtils.isEmpty(AnswerHolder)){
             EditTextEmptyHolder = false ;
         }
