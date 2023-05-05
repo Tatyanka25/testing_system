@@ -9,12 +9,11 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 
-public class Register extends Activity {
+public class RegisterActivity extends Activity {
     TextInputLayout Login, Password, Name, Surname, MiddleName, DateOfBirth, Email, MobileNumber, Question, Answer ;
     Button Register;
     String LoginHolder, PasswordHolder, NameHolder, SurnameHolder, MiddleNameHolder, DateOfBirthHolder, EmailHolder, MobileNumberHolder,  QuestionHolder, AnswerHolder;
@@ -78,12 +77,12 @@ public class Register extends Activity {
             // Closing SQLite database object.
             sqLiteDatabaseObj.close();
             // Printing toast message after done inserting.
-            Toast.makeText(Register.this,"User Registered Successfully", Toast.LENGTH_LONG).show();
+            Toast.makeText(RegisterActivity.this,"User Registered Successfully", Toast.LENGTH_LONG).show();
         }
         // This block will execute if any of the registration EditText is empty.
         else {
             // Printing toast message if any of EditText is empty.
-            Toast.makeText(Register.this,"Please Fill All The Required Fields.", Toast.LENGTH_LONG).show();
+            Toast.makeText(RegisterActivity.this,"Please Fill All The Required Fields.", Toast.LENGTH_LONG).show();
         }
     }
     // Empty edittext after done inserting process method.
@@ -143,12 +142,17 @@ public class Register extends Activity {
         if(F_Result.equalsIgnoreCase("Email Found"))
         {
             // If email is exists then toast msg will display.
-            Toast.makeText(Register.this,"Email Already Exists",Toast.LENGTH_LONG).show();
+            Toast.makeText(RegisterActivity.this,"Email Already Exists",Toast.LENGTH_LONG).show();
         }
         else {
             // If email already dose n't exists then user registration details will entered to SQLite database.
             InsertDataIntoSQLiteDatabase();
         }
         F_Result = "Not_Found" ;
+    }
+
+    public void RedirectToLogin(){
+        Intent myIntent = new Intent(this, LoginActivity.class);
+        startActivity(myIntent);
     }
 }

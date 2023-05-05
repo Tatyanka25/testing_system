@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/loginCard"
@@ -30,7 +30,7 @@
             android:textColor="@color/primaryTextColor"
             android:textSize="@dimen/newsMoreTextSize" />
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputEmail"
             style="@style/parent"
             android:layout_marginTop="@dimen/loginViewsMargin">
@@ -38,10 +38,9 @@
             <EditText
                 android:id="@+id/editTextEmail"
                 style="@style/modifiedEditText"
-                android:hint="@string/login_email_hint"
-                android:inputType="textEmailAddress"
+                android:hint="Login"
                 android:maxLines="1" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             style="@style/viewParent"
@@ -50,7 +49,7 @@
             android:textColor="@color/primaryTextColor"
             android:textSize="@dimen/newsMoreTextSize" />
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputPassword"
             style="@style/parent"
             android:layout_marginTop="@dimen/loginViewsMargin">
@@ -61,7 +60,7 @@
                 android:hint="@string/login_password_hint"
                 android:inputType="textPassword"
                 android:maxLines="1" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             style="@style/viewParent"
@@ -74,6 +73,7 @@
 
 
         <TextView
+            android:id="@+id/idBtnBacktoRegister"
             style="@style/parent"
             android:layout_marginTop="@dimen/loginViewsMargin"
             android:onClick="viewRegisterClicked"
@@ -83,15 +83,15 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/idBtnLogin"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginTop="40dp"
             android:layout_gravity="center"
-            android:text="Login"
+            android:text="LOGIN"
             android:backgroundTint="#00A4FE"
             />
 
 
     </LinearLayout>
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>
