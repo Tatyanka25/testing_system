@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -10,8 +11,6 @@
         android:stretchColumns="1">
 
 <android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/loginCard"
     app:cardCornerRadius="@dimen/loginCardRadius"
     android:elevation="5dp"
@@ -49,12 +48,13 @@
             android:id="@+id/idEdtuserLogin"
             style="@style/parent"
             android:layout_marginTop="@dimen/signup_text_margin_top">
+
             <EditText
                 style="@style/modifiedEditText"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
+                android:layout_marginTop="5dp"
                 android:hint="Login"
-                />
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
         </android.support.design.widget.TextInputLayout>
 
         <TextView
