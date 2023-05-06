@@ -45,13 +45,18 @@
                 <TextView
                     style="@style/headerText"
                     android:layout_gravity="center"
-                    android:text="Quizz"
+                    android:text="Start game"
                     android:textSize="36dp"
-                    android:layout_marginTop="40dp"/>
+                    android:layout_marginTop="0dp"/>
+
+                <TextView
+                    style="@style/headerText"
+                    android:text="Please, choose an option"
+                    android:layout_marginTop="0dp"
+                    />
+
 
                 <androidx.cardview.widget.CardView
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
                     style="@style/loginCard"
                     app:cardCornerRadius="@dimen/loginCardRadius"
                     android:elevation="5dp"
@@ -66,80 +71,75 @@
                         android:layout_gravity="center"
                         android:padding="@dimen/loginViewsMargin">
 
-                        <TextView
-                            style="@style/headerTextPrimary"
-                            android:layout_marginTop="40dp"
-                            android:text="Login"
-                            android:textSize="36dp" />
-
-                        <TextView
-                            style="@style/viewParent"
-                            android:layout_marginTop="10dp"
-                            android:text="Username"
-                            android:textColor="@color/primaryTextColor"
-                            android:textSize="@dimen/newsMoreTextSize" />
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/textInputEmail"
                             style="@style/parent"
                             android:layout_marginTop="@dimen/loginViewsMargin">
 
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/editTextEmail"
-                                style="@style/modifiedEditText"
-                                android:hint="Login"
-                                android:maxLines="1" />
                         </com.google.android.material.textfield.TextInputLayout>
-
-                        <TextView
-                            style="@style/viewParent"
-                            android:layout_marginTop="20dp"
-                            android:text="Password"
-                            android:textColor="@color/primaryTextColor"
-                            android:textSize="@dimen/newsMoreTextSize" />
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/textInputPassword"
                             style="@style/parent"
                             android:layout_marginTop="@dimen/loginViewsMargin">
 
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/editTextPassword"
-                                style="@style/modifiedEditText"
-                                android:hint="@string/login_password_hint"
-                                android:inputType="textPassword"
-                                android:maxLines="1" />
                         </com.google.android.material.textfield.TextInputLayout>
 
-                        <TextView
-                            style="@style/viewParent"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:onClick="viewForgotPassword"
-                            android:text="Forgot Password?"
-                            android:textColor="@color/primaryTextColor"
-                            android:textSize="@dimen/newsMoreTextSize" />
-
-
-                        <TextView
-                            android:onClick="RedirectToRegister"
-                            android:id="@+id/idRedirectToRegister"
-                            style="@style/parent"
-                            android:layout_marginTop="@dimen/loginViewsMargin"
-                            android:text="@string/login_signup_hint"
-                            android:textAlignment="center"
-                            android:textColor="@color/primaryTextColor"
-                            android:textStyle="bold" />
+                        <Button
+                            android:id="@+id/idBtnOption1"
+                            android:layout_width="300dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="-15dp"
+                            android:backgroundTint="#00A4FE"
+                            android:text="OPTION1" />
 
                         <Button
-                            android:id="@+id/idBtnLogin"
-                            android:layout_width="150dp"
+                            android:id="@+id/idBtnOption2"
+                            android:layout_width="300dp"
                             android:layout_height="40dp"
-                            android:layout_marginTop="40dp"
                             android:layout_gravity="center"
-                            android:text="LOGIN"
+                            android:layout_marginTop="40dp"
                             android:backgroundTint="#00A4FE"
-                            />
+                            android:text="OPTION2" />
+
+                        <Button
+                            android:id="@+id/idBtnOption3"
+                            android:layout_width="300dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="40dp"
+                            android:backgroundTint="#00A4FE"
+                            android:text="OPTION3" />
+
+                        <Button
+                            android:id="@+id/idBtnOption4"
+                            android:layout_width="300dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="40dp"
+                            android:backgroundTint="#00A4FE"
+                            android:text="OPTION4" />
+
+                        <Button
+                            android:id="@+id/idBtnOption5"
+                            android:layout_width="300dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="40dp"
+                            android:backgroundTint="#00A4FE"
+                            android:text="OPTION5" />
+
+                        <Button
+                            android:id="@+id/idBtnFinalTest"
+                            android:layout_width="300dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="40dp"
+                            android:backgroundTint="#00A4FE"
+                            android:text="FINAL TEST" />
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -157,4 +157,6 @@
     </ScrollView>
 
 </RelativeLayout>
+
+
 
