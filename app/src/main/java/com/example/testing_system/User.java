@@ -19,7 +19,7 @@ public class User {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public User() {}
+    public User(String loginHolder, String passwordHolder, String nameHolder, String middleNameHolder, String surnameHolder, String emailHolder, String mobileNumberHolder, Date date, String questionHolder, String answerHolder) {}
 
     @PrimaryKey
     public int id;

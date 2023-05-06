@@ -39,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
             if (db.userDao().checkIfUserWithEmailExists(Email.getEditText().getText().toString()))
                 return;
             User user = new User(LoginHolder, PasswordHolder, NameHolder, MiddleNameHolder,
-                    SurnameHolder, EmailHolder, MobileNumberHolder, new Date(1000));
+                    SurnameHolder, EmailHolder, MobileNumberHolder, new Date(1000), QuestionHolder, AnswerHolder);
             db.userDao().insert(user);
             EmptyEditTextAfterDataInsert();
         });
@@ -72,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public boolean Validate(){
-        return !TextUtils.isEmpty(NameHolder) &&
+        return !TextUtils.isEmpty(LoginHolder) &&
                !TextUtils.isEmpty(PasswordHolder) &&
                !TextUtils.isEmpty(NameHolder) &&
                !TextUtils.isEmpty(SurnameHolder) &&
