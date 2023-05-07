@@ -44,4 +44,6 @@ public class User {
 
     @ColumnInfo(name = "date_of_birth")
     public Date dateOfBirth;
+
+
 }
