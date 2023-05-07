@@ -1,6 +1,7 @@
 package com.example.testing_system.models;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity
 public class Question {
@@ -11,6 +12,9 @@ public class Question {
         this.opt3 = opt3;
         this.answer = answer;
     }
+
+    @PrimaryKey
+    public long questionId;
 
     @ColumnInfo(name = "Question")
     public String question;

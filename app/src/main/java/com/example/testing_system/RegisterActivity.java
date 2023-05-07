@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.testing_system.helpers.EncryptionHelper;
 import com.example.testing_system.models.User;
 import com.example.testing_system.repositories.UserRepository;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 import java.util.Date;
 import javax.inject.Inject;
@@ -25,26 +26,32 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        Login = findViewById(R.id.idEdtuserLogin);
-        Password = findViewById(R.id.idEdtuserPassword);
-        Name = findViewById(R.id.idEdtuserName);
-        Surname = findViewById(R.id.idEdtuserSurname);
-        MiddleName = findViewById(R.id.idEdtuserMiddleName);
-        DateOfBirth = findViewById(R.id.idEdtuserDateOfBirth);
-        Email = findViewById(R.id.idEdtuserEmail);
-        MobileNumber = findViewById(R.id.idEdtuserNumber);
-        Question = findViewById(R.id.idEdtuserQuestion);
-        Answer = findViewById(R.id.idEdtuserAnswer);
+        Login = findViewById(R.id.idEditUserName);
+        Password = findViewById(R.id.idEditPassword);
+        Name = findViewById(R.id.idEditName);
+        Surname = findViewById(R.id.idEditSurname);
+        MiddleName = findViewById(R.id.idEditMiddleName);
+        DateOfBirth = findViewById(R.id.idEditDateOfBirth);
+        Email = findViewById(R.id.idEditEmail);
+        MobileNumber = findViewById(R.id.idEditPhoneNumber);
+        Question = findViewById(R.id.idEditSecurityQuestion);
+        Answer = findViewById(R.id.idEditQuestionAnswer);
         Register = findViewById(R.id.idBtnRegister);
         Register.setOnClickListener(view -> {
             MoveToLocalStrings();
-            if (!Validate()) return;
-            if (repository.checkIfUserWithEmailExists(Email.getEditText().getText().toString()))
+            if (!Validate()) {
+                Snackbar.make(view, R.string.validation_error, Snackbar.LENGTH_SHORT).show();
                 return;
+            }
+            if (repository.checkIfUserWithEmailExists(Email.getEditText().getText().toString())) {
+                Snackbar.make(view, R.string.email_already_exists, Snackbar.LENGTH_SHORT).show();
+                return;
+            }
             User user = new User(LoginHolder, EncryptionHelper.toSHA256String(PasswordHolder), NameHolder, MiddleNameHolder,
                     SurnameHolder, EmailHolder, MobileNumberHolder, new Date(1000));
             repository.insert(user);
-            EmptyEditTextAfterDataInsert();
+            Snackbar.make(view, R.string.reg_success, Snackbar.LENGTH_SHORT).show();
+            finish();
         });
     }
 
@@ -59,19 +66,6 @@ public class RegisterActivity extends AppCompatActivity {
         MobileNumberHolder = MobileNumber.getEditText().getText().toString();
         QuestionHolder = Question.getEditText().getText().toString();
         AnswerHolder = Answer.getEditText().getText().toString();
-    }
-
-    public void EmptyEditTextAfterDataInsert(){
-        Login.getEditText().getText().clear();
-        Password.getEditText().getText().clear();
-        Name.getEditText().getText().clear();
-        Surname.getEditText().getText().clear();
-        MiddleName.getEditText().getText().clear();
-        DateOfBirth.getEditText().getText().clear();
-        Email.getEditText().getText().clear();
-        MobileNumber.getEditText().getText().clear();
-        Question.getEditText().getText().clear();
-        Answer.getEditText().getText().clear();
     }
 
     public boolean Validate(){

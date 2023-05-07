@@ -9,7 +9,7 @@ import javax.inject.Singleton;
 
 @Singleton
 public class UserRepository {
-    UserDao userDao;
+    private final UserDao userDao;
 
     public UserRepository(AppDatabase appDatabase) {
         this.userDao = appDatabase.userDao();
