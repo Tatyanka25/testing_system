@@ -24,7 +24,7 @@ public class OptionActivity extends Activity {
         btnFinalProject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OptionActivity.this, QuestionActivity.class);
+                Intent intent = new Intent(OptionActivity.this, StartActivity.class);
                 startActivity(intent);
                 finish();}
         });
@@ -32,7 +32,7 @@ public class OptionActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(OptionActivity.this,
-                        FinalTestActivity.class);
+                        StartActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -41,7 +41,7 @@ public class OptionActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(OptionActivity.this,
-                        QuestionActivity.class);
+                        StartActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -51,7 +51,7 @@ public class OptionActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(OptionActivity.this,
-                        QuestionActivity.class);
+                        StartActivity.class);
                 startActivity(intent);
                 finish();}
         });
@@ -60,7 +60,7 @@ public class OptionActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(OptionActivity.this,
-                        QuestionActivity.class);
+                        StartActivity.class);
                 startActivity(intent);
                 finish();}
         });
@@ -69,7 +69,7 @@ public class OptionActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(OptionActivity.this,
-                        QuestionActivity.class);
+                        StartActivity.class);
                 startActivity(intent);
                 finish();}
         });
