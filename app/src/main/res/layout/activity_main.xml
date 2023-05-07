@@ -50,8 +50,6 @@
                     android:layout_marginTop="40dp"/>
 
                 <androidx.cardview.widget.CardView
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
                     style="@style/loginCard"
                     app:cardCornerRadius="@dimen/loginCardRadius"
                     android:elevation="5dp"
@@ -62,7 +60,7 @@
 
                     <LinearLayout
                         style="@style/linearParent"
-                        android:layout_height="508dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:padding="@dimen/loginViewsMargin">
 
@@ -74,6 +72,7 @@
 
                         <TextView
                             style="@style/viewParent"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:text="Username"
                             android:textColor="@color/primaryTextColor"
@@ -85,7 +84,6 @@
                             android:layout_marginTop="@dimen/loginViewsMargin">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/editTextEmail"
                                 style="@style/modifiedEditText"
                                 android:hint="Login"
                                 android:maxLines="1" />
@@ -104,7 +102,6 @@
                             android:layout_marginTop="@dimen/loginViewsMargin">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/editTextPassword"
                                 style="@style/modifiedEditText"
                                 android:hint="@string/login_password_hint"
                                 android:inputType="textPassword"
@@ -122,10 +119,10 @@
 
 
                         <TextView
-                            android:onClick="RedirectToRegister"
                             android:id="@+id/idRedirectToRegister"
                             style="@style/parent"
                             android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:onClick="RedirectToRegister"
                             android:text="@string/login_signup_hint"
                             android:textAlignment="center"
                             android:textColor="@color/primaryTextColor"
@@ -135,11 +132,10 @@
                             android:id="@+id/idBtnLogin"
                             android:layout_width="150dp"
                             android:layout_height="40dp"
-                            android:layout_marginTop="40dp"
                             android:layout_gravity="center"
-                            android:text="LOGIN"
+                            android:layout_marginTop="40dp"
                             android:backgroundTint="#00A4FE"
-                            />
+                            android:text="LOGIN" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
