@@ -2,6 +2,7 @@ package com.example.testing_system;
 
 import android.os.Parcelable;
 import android.os.Parcel;
+
 public class QuestionActivity implements Parcelable {
     public static final String DIFFICULTY_EASY = "Easy";
     public static final String DIFFICULTY_MEDIUM = "Medium";
@@ -143,4 +144,3 @@ public class QuestionActivity implements Parcelable {
     }
 }
 
-}

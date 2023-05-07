@@ -1,47 +1,30 @@
 package com.example.testing_system.models;
-
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-import java.util.Date;
 
 @Entity
 public class Question {
-    public User(String userName, String passwordHash, String firstName, String middleName, String lastName, String email, String mobileNumber, Date dateOfBirth) {
-        this.userName = userName;
-        this.passwordHash = passwordHash;
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.email = email;
-        this.mobileNumber = mobileNumber;
-        this.dateOfBirth = dateOfBirth;
+    public Question(String question, String opt1, String opt2, String opt3, String answer) {
+        this.question= question;
+        this.opt1 = opt1;
+        this.opt2 = opt2;
+        this.opt3 = opt3;
+        this.answer = answer;
     }
 
-    @PrimaryKey
-    public int userId;
+    @ColumnInfo(name = "Question")
+    public String question;
 
-    @ColumnInfo(name = "userName")
-    public String userName;
+    @ColumnInfo(name = "Option1")
+    public String opt1;
 
-    @ColumnInfo(name = "passwordHash")
-    public String passwordHash;
+    @ColumnInfo(name = "Option2")
+    public String opt2;
 
-    @ColumnInfo(name = "first_name")
-    public String firstName;
+    @ColumnInfo(name = "Option3")
+    public String opt3;
 
-    @ColumnInfo(name = "middle_name")
-    public String middleName;
+    @ColumnInfo(name = "Answer")
+    public String answer;
 
-    @ColumnInfo(name = "last_name")
-    public String lastName;
-
-    @ColumnInfo(name = "email")
-    public String email;
-
-    @ColumnInfo(name = "mobile_number")
-    public String mobileNumber;
-
-    @ColumnInfo(name = "date_of_birth")
-    public Date dateOfBirth;
 }
