@@ -25,16 +25,16 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        Login = findViewById(R.id.idEdtuserLogin);
-        Password = findViewById(R.id.idEdtuserPassword);
-        Name = findViewById(R.id.idEdtuserName);
-        Surname = findViewById(R.id.idEdtuserSurname);
-        MiddleName = findViewById(R.id.idEdtuserMiddleName);
-        DateOfBirth = findViewById(R.id.idEdtuserDateOfBirth);
-        Email = findViewById(R.id.idEdtuserEmail);
-        MobileNumber = findViewById(R.id.idEdtuserNumber);
-        Question = findViewById(R.id.idEdtuserQuestion);
-        Answer = findViewById(R.id.idEdtuserAnswer);
+        Login = findViewById(R.id.idEditUserName);
+        Password = findViewById(R.id.idEditPassword);
+        Name = findViewById(R.id.idEditName);
+        Surname = findViewById(R.id.idEditSurname);
+        MiddleName = findViewById(R.id.idEditMiddleName);
+        DateOfBirth = findViewById(R.id.idEditDateOfBirth);
+        Email = findViewById(R.id.idEditEmail);
+        MobileNumber = findViewById(R.id.idEditPhoneNumber);
+        Question = findViewById(R.id.idEditSecurityQuestion);
+        Answer = findViewById(R.id.idEditQuestionAnswer);
         Register = findViewById(R.id.idBtnRegister);
         Register.setOnClickListener(view -> {
             MoveToLocalStrings();

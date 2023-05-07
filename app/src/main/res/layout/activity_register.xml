@@ -11,7 +11,7 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:stretchColumns="1">
 
         <androidx.cardview.widget.CardView
@@ -51,17 +51,15 @@
                     android:textSize="@dimen/newsMoreTextSize" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/idEdtuserLogin"
+                    android:id="@+id/idEditUserName"
                     style="@style/parent"
                     android:layout_marginTop="@dimen/signup_text_margin_top">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         style="@style/modifiedEditText"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="5dp"
-                        android:contentDescription="Login"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -72,16 +70,15 @@
                     android:textSize="@dimen/newsMoreTextSize" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/idEdtuserPassword"
+                    android:id="@+id/idEditPassword"
                     style="@style/parent"
                     android:layout_marginTop="@dimen/signup_text_margin_top">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         style="@style/modifiedEditText"
-                        android:layout_height="40dp"
-                        android:contentDescription="@string/login_password_hint"
-                        android:inputType="textPassword"
-                        android:maxLines="1" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -92,16 +89,15 @@
                     android:textSize="@dimen/newsMoreTextSize" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/idEdtuserName"
+                    android:id="@+id/idEditName"
                     style="@style/parent"
                     android:layout_marginTop="@dimen/signup_text_margin_top">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         style="@style/modifiedEditText"
-                        android:layout_height="40dp"
-                        android:contentDescription="Name"
-                        android:inputType="text"
-                        android:maxLines="1" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -112,16 +108,15 @@
                     android:textSize="@dimen/newsMoreTextSize" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/idEdtuserSurname"
+                    android:id="@+id/idEditSurname"
                     style="@style/parent"
                     android:layout_marginTop="@dimen/signup_text_margin_top">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         style="@style/modifiedEditText"
-                        android:layout_height="40dp"
-                        android:contentDescription="Surname"
-                        android:inputType="text"
-                        android:maxLines="1" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -132,16 +127,15 @@
                     android:textSize="@dimen/newsMoreTextSize" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/idEdtuserMiddleName"
+                    android:id="@+id/idEditMiddleName"
                     style="@style/parent"
                     android:layout_marginTop="@dimen/signup_text_margin_top">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         style="@style/modifiedEditText"
-                        android:layout_height="40dp"
-                        android:contentDescription="Middle name"
-                        android:inputType="text"
-                        android:maxLines="1" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -152,16 +146,15 @@
                     android:textSize="@dimen/newsMoreTextSize" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/idEdtuserDateOfBirth"
+                    android:id="@+id/idEditDateOfBirth"
                     style="@style/parent"
                     android:layout_marginTop="@dimen/signup_text_margin_top">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         style="@style/modifiedEditText"
-                        android:layout_height="40dp"
-                        android:contentDescription="Date of Birth"
-                        android:inputType="text"
-                        android:maxLines="1" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -172,16 +165,15 @@
                     android:textSize="@dimen/newsMoreTextSize" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/idEdtuserEmail"
+                    android:id="@+id/idEditEmail"
                     style="@style/parent"
                     android:layout_marginTop="@dimen/signup_text_margin_top">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         style="@style/modifiedEditText"
-                        android:layout_height="40dp"
-                        android:contentDescription="Email"
-                        android:inputType="text"
-                        android:maxLines="1" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -192,16 +184,15 @@
                     android:textSize="@dimen/newsMoreTextSize" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/idEdtuserNumber"
+                    android:id="@+id/idEditPhoneNumber"
                     style="@style/parent"
                     android:layout_marginTop="@dimen/signup_text_margin_top">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         style="@style/modifiedEditText"
-                        android:layout_height="40dp"
-                        android:contentDescription="Mobile Number"
-                        android:inputType="text"
-                        android:maxLines="1" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -212,16 +203,15 @@
                     android:textSize="@dimen/newsMoreTextSize" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/idEdtuserQuestion"
-                    style="@style/parent"
-                    android:layout_marginTop="@dimen/signup_text_margin_top">
+                    android:id="@+id/idEditSecurityQuestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         style="@style/modifiedEditText"
-                        android:layout_height="40dp"
-                        android:contentDescription="Secret Question"
-                        android:inputType="text"
-                        android:maxLines="1" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -232,18 +222,16 @@
                     android:textSize="@dimen/newsMoreTextSize" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/idEdtuserAnswer"
+                    android:id="@+id/idEditQuestionAnswer"
                     style="@style/parent"
                     android:layout_marginTop="@dimen/signup_text_margin_top">
 
-                    <EditText
+                    <com.google.android.material.textfield.TextInputEditText
                         style="@style/modifiedEditText"
-                        android:layout_height="40dp"
-                        android:contentDescription="Answer for question"
-                        android:inputType="text"
-                        android:maxLines="1" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
-
 
                 <Button
                     android:id="@+id/idBtnRegister"
@@ -258,8 +246,6 @@
                     android:textColor="@color/white"
                     android:topLeftRadius="10dp"
                     android:topRightRadius="10dp" />
-
-
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
