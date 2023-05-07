@@ -5,54 +5,46 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.testing_system.repositories.UserRepository;
 import com.google.android.material.textfield.TextInputLayout;
-
-import java.util.Date;
-
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
     @Inject
-    AppDatabase db;
+    UserRepository repository;
     TextInputLayout Login, Password;
-
-    String LoginHolder, PasswordHolder;
-    Button LOGIN;
+    Button LoginBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Login = findViewById(R.id.editTextEmail);
+        Login = findViewById(R.id.textInputEmail);
         Password = findViewById(R.id.textInputPassword);
-        LOGIN = (Button)findViewById(R.id.idBtnLogin);
-        LOGIN.setOnClickListener(view -> {
-            MoveToLocalStrings();
-            if (!Validate()) return;
-            //if (db.userDao().checkIfUserWithLoginExists(Login.getEditText().getText().toString()))
-            //    return;
-            EmptyEditTextAfterDataInsert();
-        });
+        LoginBtn = findViewById(R.id.idBtnLogin);
+        LoginBtn.setOnClickListener(view -> login());
+    }
+
+    private void login() {
+        String userName = Login.getEditText().getText().toString();
+        String password = Password.getEditText().getText().toString();
+        if (TextUtils.isEmpty(userName) || TextUtils.isEmpty(password)) return;
+        boolean authenticated = repository.authenticate(userName, password);
+        if (authenticated) {
+            MyApplication app = (MyApplication) this.getApplication();
+            app.authenticated = true;
+            //TODO: redirect to account
+        }
+        EmptyEditTextAfterDataInsert();
     }
 
     public void EmptyEditTextAfterDataInsert(){
         Login.getEditText().getText().clear();
-        Password.getEditText().getText().clear();}
-
-    private void MoveToLocalStrings() {
-        LoginHolder = Login.getEditText().getText().toString() ;
-        PasswordHolder = Password.getEditText().getText().toString();}
-
-    public boolean Validate(){
-        return !TextUtils.isEmpty(LoginHolder) &&
-                !TextUtils.isEmpty(PasswordHolder);}
+        Password.getEditText().getText().clear();
+    }
 
     public void RedirectToRegister(View view) {
         Intent myIntent = new Intent(this, RegisterActivity.class);
         startActivity(myIntent);
     }
-
-
 }

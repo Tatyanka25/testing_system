@@ -1,16 +1,15 @@
-package com.example.testing_system;
+package com.example.testing_system.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
 import java.util.Date;
 
 @Entity
 public class User {
-    public User(String login, String password, String firstName, String middleName, String lastName, String email, String mobileNumber, Date dateOfBirth) {
-        this.login = login;
-        this.password = password;
+    public User(String userName, String passwordHash, String firstName, String middleName, String lastName, String email, String mobileNumber, Date dateOfBirth) {
+        this.userName = userName;
+        this.passwordHash = passwordHash;
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -19,16 +18,14 @@ public class User {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public User(String loginHolder, String passwordHolder, String nameHolder, String middleNameHolder, String surnameHolder, String emailHolder, String mobileNumberHolder, Date date, String questionHolder, String answerHolder) {}
-
     @PrimaryKey
-    public int id;
+    public int userId;
 
-    @ColumnInfo(name = "login")
-    public String login;
+    @ColumnInfo(name = "userName")
+    public String userName;
 
-    @ColumnInfo(name = "password")
-    public String password;
+    @ColumnInfo(name = "passwordHash")
+    public String passwordHash;
 
     @ColumnInfo(name = "first_name")
     public String firstName;
@@ -47,7 +44,4 @@ public class User {
 
     @ColumnInfo(name = "date_of_birth")
     public Date dateOfBirth;
-
-    public static final String QUESTION_COL = "secret_question";
-    public static final String ANSWER_COL = "answer";
 }
