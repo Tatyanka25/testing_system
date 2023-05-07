@@ -18,7 +18,10 @@ import dagger.hilt.android.qualifiers.ApplicationContext;
 public class DatabaseModule {
     @Provides
     public static AppDatabase provideAppDatabase(@ApplicationContext Context context) {
-        return Room.databaseBuilder(context, AppDatabase.class, "testing_system").build();
+        return Room
+                .databaseBuilder(context, AppDatabase.class, "testing_system")
+                .allowMainThreadQueries()
+                .build();
     }
 
     @Provides

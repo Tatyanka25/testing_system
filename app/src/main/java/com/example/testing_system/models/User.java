@@ -7,9 +7,9 @@ import java.util.Date;
 
 @Entity
 public class User {
-    public User(String login, String password, String firstName, String middleName, String lastName, String email, String mobileNumber, Date dateOfBirth) {
-        this.login = login;
-        this.password = password;
+    public User(String userName, String passwordHash, String firstName, String middleName, String lastName, String email, String mobileNumber, Date dateOfBirth) {
+        this.userName = userName;
+        this.passwordHash = passwordHash;
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -21,11 +21,11 @@ public class User {
     @PrimaryKey
     public int userId;
 
-    @ColumnInfo(name = "login")
-    public String login;
+    @ColumnInfo(name = "userName")
+    public String userName;
 
-    @ColumnInfo(name = "password")
-    public String password;
+    @ColumnInfo(name = "passwordHash")
+    public String passwordHash;
 
     @ColumnInfo(name = "first_name")
     public String firstName;

@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.testing_system.helpers.EncryptionHelper;
 import com.example.testing_system.models.User;
 import com.example.testing_system.repositories.UserRepository;
 import com.google.android.material.textfield.TextInputLayout;
@@ -40,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
             if (!Validate()) return;
             if (repository.checkIfUserWithEmailExists(Email.getEditText().getText().toString()))
                 return;
-            User user = new User(LoginHolder, PasswordHolder, NameHolder, MiddleNameHolder,
+            User user = new User(LoginHolder, EncryptionHelper.toSHA256String(PasswordHolder), NameHolder, MiddleNameHolder,
                     SurnameHolder, EmailHolder, MobileNumberHolder, new Date(1000));
             repository.insert(user);
             EmptyEditTextAfterDataInsert();
