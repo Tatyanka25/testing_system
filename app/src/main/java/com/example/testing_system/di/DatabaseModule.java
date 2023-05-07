@@ -5,8 +5,8 @@ import android.content.Context;
 import androidx.room.Room;
 
 import com.example.testing_system.database.AppDatabase;
+import com.example.testing_system.repositories.QuestionRepository;
 import com.example.testing_system.repositories.UserRepository;
-
 import dagger.Module;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
@@ -27,5 +27,10 @@ public class DatabaseModule {
     @Provides
     public static UserRepository provideUserRepository(AppDatabase appDatabase) {
         return new UserRepository(appDatabase);
+    }
+
+    @Provides
+    public static QuestionRepository provideQuestionRepository(AppDatabase appDatabase) {
+        return new QuestionRepository(appDatabase);
     }
 }
