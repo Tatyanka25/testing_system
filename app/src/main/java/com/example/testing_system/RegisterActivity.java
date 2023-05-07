@@ -6,6 +6,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.testing_system.models.User;
+import com.example.testing_system.repositories.UserRepository;
 import com.google.android.material.textfield.TextInputLayout;
 import java.util.Date;
 import javax.inject.Inject;
@@ -14,7 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class RegisterActivity extends AppCompatActivity {
     @Inject
-    AppDatabase db;
+    UserRepository repository;
     TextInputLayout Login, Password, Name, Surname, MiddleName, DateOfBirth, Email, MobileNumber, Question, Answer ;
     Button Register;
     String LoginHolder, PasswordHolder, NameHolder, SurnameHolder, MiddleNameHolder, DateOfBirthHolder, EmailHolder, MobileNumberHolder,  QuestionHolder, AnswerHolder;
@@ -32,15 +34,15 @@ public class RegisterActivity extends AppCompatActivity {
         MobileNumber = findViewById(R.id.idEdtuserNumber);
         Question = findViewById(R.id.idEdtuserQuestion);
         Answer = findViewById(R.id.idEdtuserAnswer);
-        Register = (Button)findViewById(R.id.idBtnRegister);
+        Register = findViewById(R.id.idBtnRegister);
         Register.setOnClickListener(view -> {
             MoveToLocalStrings();
             if (!Validate()) return;
-            if (db.userDao().checkIfUserWithEmailExists(Email.getEditText().getText().toString()))
+            if (repository.checkIfUserWithEmailExists(Email.getEditText().getText().toString()))
                 return;
             User user = new User(LoginHolder, PasswordHolder, NameHolder, MiddleNameHolder,
-                    SurnameHolder, EmailHolder, MobileNumberHolder, new Date(1000), QuestionHolder, AnswerHolder);
-            db.userDao().insert(user);
+                    SurnameHolder, EmailHolder, MobileNumberHolder, new Date(1000));
+            repository.insert(user);
             EmptyEditTextAfterDataInsert();
         });
     }

@@ -1,9 +1,9 @@
-package com.example.testing_system;
+package com.example.testing_system.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
-
+import com.example.testing_system.models.User;
 import java.util.List;
 
 @Dao
@@ -11,7 +11,7 @@ public interface UserDao {
     @Query("SELECT * FROM user")
     List<User> getAll();
 
-    @Query("SELECT * FROM user WHERE id = :id")
+    @Query("SELECT * FROM user WHERE userId = :id")
     User getById(int id);
 
     @Insert

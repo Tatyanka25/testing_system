@@ -1,9 +1,8 @@
-package com.example.testing_system;
+package com.example.testing_system.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
 import java.util.Date;
 
 @Entity
@@ -19,10 +18,8 @@ public class User {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public User(String loginHolder, String passwordHolder, String nameHolder, String middleNameHolder, String surnameHolder, String emailHolder, String mobileNumberHolder, Date date, String questionHolder, String answerHolder) {}
-
     @PrimaryKey
-    public int id;
+    public int userId;
 
     @ColumnInfo(name = "login")
     public String login;
@@ -47,7 +44,4 @@ public class User {
 
     @ColumnInfo(name = "date_of_birth")
     public Date dateOfBirth;
-
-    public static final String QUESTION_COL = "secret_question";
-    public static final String ANSWER_COL = "answer";
 }
