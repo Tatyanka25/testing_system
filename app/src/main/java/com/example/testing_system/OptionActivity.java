@@ -22,13 +22,11 @@ public class OptionActivity extends Activity {
         btnFinalProject = (Button) findViewById(R.id.idBtnFinalTest);
 
         btnFinalProject.setOnClickListener(new View.OnClickListener() {
-
-    @Override
-    public void onClick(View v) {
-         Intent intent = new Intent(OptionActivity.this, QuestionActivity.class);
-         startActivity(intent);
-         finish();
-            }
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OptionActivity.this, QuestionActivity.class);
+                startActivity(intent);
+                finish();}
         });
         btnFinalProject.setOnClickListener(new View.OnClickListener() {
             @Override
