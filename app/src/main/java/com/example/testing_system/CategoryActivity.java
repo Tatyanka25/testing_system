@@ -4,6 +4,10 @@ public class CategoryActivity {
     public static final int ANIMALS = 1;
     public static final int PEOPLE = 2;
     public static final int RANDOM = 3;
+    public static final int MUSIC = 4 ;
+    public static final int SPORT = 5;
+
+
 
     private int id;
     private String name;
