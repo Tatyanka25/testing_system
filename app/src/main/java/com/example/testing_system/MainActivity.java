@@ -6,16 +6,14 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.testing_system.database.AppDatabase;
+import com.example.testing_system.repositories.UserRepository;
 import com.google.android.material.textfield.TextInputLayout;
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
     @Inject
-    AppDatabase db;
+    UserRepository repository;
     TextInputLayout Login, Password;
-    String LoginHolder, PasswordHolder;
     Button LoginBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +29,12 @@ public class MainActivity extends AppCompatActivity {
         String userName = Login.getEditText().getText().toString();
         String password = Password.getEditText().getText().toString();
         if (TextUtils.isEmpty(userName) || TextUtils.isEmpty(password)) return;
-
+        boolean authenticated = repository.authenticate(userName, password);
+        if (authenticated) {
+            MyApplication app = (MyApplication) this.getApplication();
+            app.authenticated = true;
+            //TODO: redirect to account
+        }
         EmptyEditTextAfterDataInsert();
     }
 

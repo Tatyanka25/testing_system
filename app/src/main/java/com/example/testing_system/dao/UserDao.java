@@ -14,6 +14,9 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE userId = :id")
     User getById(int id);
 
+    @Query("SELECT passwordHash FROM user WHERE userName = :userName")
+    String getPasswordByUserName(String userName);
+
     @Insert
     void insert(User user);
 
