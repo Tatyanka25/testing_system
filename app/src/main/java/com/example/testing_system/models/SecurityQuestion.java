@@ -5,7 +5,11 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class SecurityQuestion {
-    @PrimaryKey
+    public SecurityQuestion(String question) {
+        this.question = question;
+    }
+
+    @PrimaryKey(autoGenerate = true)
     public long questionId;
     public String question;
 }

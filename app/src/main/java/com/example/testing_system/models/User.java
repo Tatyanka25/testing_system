@@ -7,7 +7,8 @@ import java.util.Date;
 
 @Entity
 public class User {
-    public User(String userName, String passwordHash, String firstName, String middleName, String lastName, String email, String mobileNumber, Date dateOfBirth) {
+    public User(String userName, String passwordHash, String firstName, String middleName,
+                String lastName, String email, String mobileNumber, Date dateOfBirth, String securityQuestion, String securityQuestionAnswer) {
         this.userName = userName;
         this.passwordHash = passwordHash;
         this.firstName = firstName;
@@ -16,9 +17,11 @@ public class User {
         this.email = email;
         this.mobileNumber = mobileNumber;
         this.dateOfBirth = dateOfBirth;
+        this.securityQuestion = securityQuestion;
+        this.securityQuestionAnswer = securityQuestionAnswer;
     }
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public int userId;
 
     @ColumnInfo(name = "userName")
@@ -45,5 +48,9 @@ public class User {
     @ColumnInfo(name = "date_of_birth")
     public Date dateOfBirth;
 
+    @ColumnInfo(name = "security_question")
+    public String securityQuestion;
 
+    @ColumnInfo(name = "security_question_answer")
+    public String securityQuestionAnswer;
 }

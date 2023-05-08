@@ -33,4 +33,9 @@ public class DatabaseModule {
     public static QuestionRepository provideQuestionRepository(AppDatabase appDatabase) {
         return new QuestionRepository(appDatabase);
     }
+
+    @Provides
+    public static SecurityQuestionRepository provideSecurityQuestionRepository(AppDatabase appDatabase) {
+        return new SecurityQuestionRepository(appDatabase);
+    }
 }

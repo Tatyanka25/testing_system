@@ -13,7 +13,7 @@ public class Question {
         this.answer = answer;
     }
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public long questionId;
 
     @ColumnInfo(name = "Question")

@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.testing_system.helpers.EncryptionHelper;
 import com.example.testing_system.models.User;
+import com.example.testing_system.repositories.SecurityQuestionRepository;
 import com.example.testing_system.repositories.UserRepository;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
@@ -19,6 +22,8 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class RegisterActivity extends AppCompatActivity {
     @Inject
     UserRepository repository;
+    @Inject
+    SecurityQuestionRepository securityQuestionRepository;
     TextInputLayout Login, Password, Name, Surname, MiddleName, DateOfBirth, Email, MobileNumber, Question, Answer ;
     Button Register;
     String LoginHolder, PasswordHolder, NameHolder, SurnameHolder, MiddleNameHolder, DateOfBirthHolder, EmailHolder, MobileNumberHolder,  QuestionHolder, AnswerHolder;
@@ -35,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
         Email = findViewById(R.id.idEditEmail);
         MobileNumber = findViewById(R.id.idEditPhoneNumber);
         Question = findViewById(R.id.idEditSecurityQuestion);
+        ((AutoCompleteTextView) Question.getEditText()).setAdapter(new ArrayAdapter<>(this, R.layout.list_item, securityQuestionRepository.getAllNames()));
         Answer = findViewById(R.id.idEditQuestionAnswer);
         Register = findViewById(R.id.idBtnRegister);
         Register.setOnClickListener(view -> {
@@ -47,8 +53,9 @@ public class RegisterActivity extends AppCompatActivity {
                 Snackbar.make(view, R.string.email_already_exists, Snackbar.LENGTH_SHORT).show();
                 return;
             }
-            User user = new User(LoginHolder, EncryptionHelper.toSHA256String(PasswordHolder), NameHolder, MiddleNameHolder,
-                    SurnameHolder, EmailHolder, MobileNumberHolder, new Date(1000));
+            User user = new User(LoginHolder, EncryptionHelper.toSHA256String(PasswordHolder),
+                    NameHolder, MiddleNameHolder, SurnameHolder, EmailHolder, MobileNumberHolder,
+                    new Date(1000), QuestionHolder, AnswerHolder);
             repository.insert(user);
             Snackbar.make(view, R.string.reg_success, Snackbar.LENGTH_SHORT).show();
             finish();
