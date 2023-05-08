@@ -151,10 +151,14 @@
                     android:layout_marginTop="@dimen/signup_text_margin_top">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/idEditTextDateOfBirth"
                         style="@style/modifiedEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text" />
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
