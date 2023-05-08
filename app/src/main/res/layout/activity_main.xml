@@ -67,7 +67,7 @@
                         <TextView
                             style="@style/headerTextPrimary"
                             android:layout_marginTop="40dp"
-                            android:text="Login"
+                            android:text="Log in"
                             android:textSize="36dp" />
 
                         <TextView
