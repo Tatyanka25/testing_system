@@ -1,4 +1,4 @@
-package com.example.testing_system;
+package com.example.testing_system.question_activities;
 
 public class CategoryActivity {
     public static final int ANIMALS = 1;
@@ -12,8 +12,6 @@ public class CategoryActivity {
     private int id;
     private String name;
 
-    public CategoryActivity() {
-    }
 
     public CategoryActivity(String name) {
         this.name = name;

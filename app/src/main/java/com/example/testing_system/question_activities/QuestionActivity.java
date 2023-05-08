@@ -1,4 +1,4 @@
-package com.example.testing_system;
+package com.example.testing_system.question_activities;
 
 import android.os.Parcelable;
 import android.os.Parcel;

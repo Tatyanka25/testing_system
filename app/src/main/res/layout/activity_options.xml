@@ -93,7 +93,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="-15dp"
                             android:backgroundTint="#00A4FE"
-                            android:text="OPTION1" />
+                            android:text="ANIMALS" />
 
                         <Button
                             android:id="@+id/idBtnOption2"
@@ -102,7 +102,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="40dp"
                             android:backgroundTint="#00A4FE"
-                            android:text="OPTION2" />
+                            android:text="PEOPLE" />
 
                         <Button
                             android:id="@+id/idBtnOption3"
@@ -111,7 +111,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="40dp"
                             android:backgroundTint="#00A4FE"
-                            android:text="OPTION3" />
+                            android:text="RANDOM" />
 
                         <Button
                             android:id="@+id/idBtnOption4"
@@ -120,7 +120,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="40dp"
                             android:backgroundTint="#00A4FE"
-                            android:text="OPTION4" />
+                            android:text="MUSIC" />
 
                         <Button
                             android:id="@+id/idBtnOption5"
@@ -129,7 +129,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="40dp"
                             android:backgroundTint="#00A4FE"
-                            android:text="OPTION5" />
+                            android:text="SPORT" />
 
                         <Button
                             android:id="@+id/idBtnFinalTest"

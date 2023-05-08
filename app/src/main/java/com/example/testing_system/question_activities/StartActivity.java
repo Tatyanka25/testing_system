@@ -1,4 +1,4 @@
-package com.example.testing_system;
+package com.example.testing_system.question_activities;
 
 public class StartActivity {
     //ПОНЯТЬ, КАК ЗАПИХНУТЬ В БАЗУ ДАННЫХ
