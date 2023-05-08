@@ -13,7 +13,6 @@ import com.example.testing_system.repositories.UserRepository;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 
 import dagger.Module;
@@ -36,41 +35,39 @@ public class DatabaseModule {
     }
 
     private static void prepopulate(AppDatabase db) {
-        db.securityQuestionDao().insert(
-                new SecurityQuestion("Option 1"),
-                new SecurityQuestion("Option 2"),
-                new SecurityQuestion("Option 3")
-        );
-        db.categoryDao().insert(
-                new Category("Животные"),
-                new Category("Люди"),
-                new Category("Случайные"),
-                new Category("Музыка"),
-                new Category("Спорт")
-        );
-        prepopulateQuestions(db);
+        db.runInTransaction(() ->  {
+            db.securityQuestionDao().insert(
+                    new SecurityQuestion("Option 1"),
+                    new SecurityQuestion("Option 2"),
+                    new SecurityQuestion("Option 3")
+            );
+            db.categoryDao().insert(
+                    new Category("Животные"),
+                    new Category("Люди"),
+                    new Category("Случайные"),
+                    new Category("Музыка"),
+                    new Category("Спорт")
+            );
+            try {
+                prepopulateQuestions(db);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
-    private static void prepopulateQuestions(AppDatabase db) {
-        try {
-            for (String fileName: MyApplication.instance.getAssets().list("questionsByCategory")) {
-                try (BufferedReader reader = new BufferedReader(
-                        new InputStreamReader(MyApplication.instance.getAssets().open("questionsByCategory/" + fileName), StandardCharsets.UTF_8))
-                ) {
-                    String mLine;
-                    while ((mLine = reader.readLine()) != null) {
-                        String[] parts = mLine.substring(0, mLine.length() - 1).split("\\(");
-                        String[] answers = parts[1].split(",");
-                        db.questionDao().insert(new Question(parts[0], answers[0], answers[1], answers[2], null, Integer.parseInt(fileName.split("\\.")[0])));
-                    }
-                } catch (UnsupportedEncodingException e) {
-                    throw new RuntimeException(e);
-                } catch (IOException ignored) {
-
+    private static void prepopulateQuestions(AppDatabase db) throws IOException {
+        for (String fileName: MyApplication.instance.getAssets().list("questionsByCategory")) {
+            try (BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(MyApplication.instance.getAssets().open("questionsByCategory/" + fileName), StandardCharsets.UTF_8))
+            ) {
+                String mLine;
+                while ((mLine = reader.readLine()) != null) {
+                    String[] parts = mLine.substring(0, mLine.length() - 1).split("\\(");
+                    String[] answers = parts[1].split(",");
+                    db.questionDao().insert(new Question(parts[0], answers[0], answers[1], answers[2], null, Integer.parseInt(fileName.split("\\.")[0])));
                 }
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 
