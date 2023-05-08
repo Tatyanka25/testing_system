@@ -1,9 +1,12 @@
 package com.example.testing_system.models;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(foreignKeys = {
+        @ForeignKey(entity = Category.class, parentColumns = "categoryId", childColumns = "category_id", onDelete = ForeignKey.SET_NULL)}
+)
 public class Question {
     public Question(String question, String opt1, String opt2, String opt3, String answer, long category_id) {
         this.question= question;
